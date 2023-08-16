@@ -1,0 +1,11 @@
+<h1>select the case's name to load.</h1>
+<form action="{% url 'survey:load_text' %}" method="POST">
+    {% csrf_token %}
+    <select id="case_name" name="case_name">
+        {% for c in case_list %}
+            <option value="{{c.name}}">{{c.name}}</option>
+        {% endfor %}
+      </select>
+    <button type="submit">submit</button>
+</form>
+<button type="button"  onclick="location.href='/survey/'"> Back </button>

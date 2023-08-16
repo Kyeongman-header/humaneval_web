@@ -1,0 +1,32 @@
+<h1> Root Page </h1>
+{% if not none %}
+<fieldset>
+    <legend><h2> Select Existing Username. </h2></legend>
+<form action="{% url 'survey:index' %}">
+    {% csrf_token %}
+    <select id="user_name" name="user_name">
+        {% for s in subject_list %}
+            <option value="{{s.username}}">{{s.username}}</option>
+        {% endfor %}
+      </select>
+    <button type="submit">submit</button>
+</form>
+</fieldset>
+{% endif %}
+<br>
+<br>
+<fieldset>
+    <legend><h2> ...Or Create New User </h2></legend>
+<form action="{% url 'survey:index' %}">
+    {% csrf_token %}
+    <label for="user_name">New User Name : </label>
+    <input type="text" id="user_name" name="user_name" value="John">
+    <button type="submit">submit</button>
+</form>
+</fieldset>
+<br>
+<br>
+<fieldset>
+    <legend> for only administer </legend>
+    <button type="button" onclick="location.href='/survey/load/'">Load datas</button>
+</fieldset>

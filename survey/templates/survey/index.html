@@ -1,0 +1,21 @@
+{% if case_list %}
+<fieldset>
+    <legend>Survey list</legend>
+    <ul>
+    {% for c in case_list %}
+        <li><a href="/survey/{{ c.name }}/1/{{user.username}}">{{ c.name }}</a></li>
+    {% endfor %}
+    </ul>
+</fieldset>
+<fieldset>
+    <legend>analysis list</legend>
+    <ul>
+    {% for c in case_list %}
+        <li><a href="/survey/analysis/{{ c.name }}/{{user.username}}">{{ c.name }}</a></li>
+    {% endfor %}
+    </ul>
+</fieldset>
+{% else %}
+    <p>No cases are available.</p>
+{% endif %}
+<button type="button"  onclick="location.href='/survey/'"> Back </button>

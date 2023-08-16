@@ -1,0 +1,14 @@
+<h1>{{ case.name }}</h1>
+<fieldset>
+    <legend>Fake average of <{{num_fake}}> texts' scores</legend>
+    <p>q1 fake average scores : {{q1_fake_avg}}</p>
+    <p>q2 fake average scores : {{q2_fake_avg}}</p>
+    <p>q3 fake average scores : {{q3_fake_avg}}</p>
+</fieldset>
+<fieldset>
+    <legend>Real average of <{{num_real}}> texts' scores</legend>
+    <p>q1 real average scores : {{q1_real_avg}}</p>
+    <p>q2 real average scores : {{q2_real_avg}}</p>
+    <p>q3 real average scores : {{q3_real_avg}}</p>
+</fieldset>
+<button type="button"  onclick="location.href='/survey/index/?user_name={{user_name}}'"> Back </button>
